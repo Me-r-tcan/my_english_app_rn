@@ -8,6 +8,7 @@ import WordScreen from "../screens/WordScreen";
 import WordSelectScreen from "../screens/WordSelectScreen";
 import WordWriteScreen from "../screens/WordWriteScreen";
 import SentenceWriteScreen from "../screens/SentenceWriteScreen";
+import HeaderBackButton from "../components/headers/HeaderBackButton";
 import routes from "./routes";
 
 const Stack = createStackNavigator();
@@ -37,6 +38,7 @@ const LearningNavigator = () => (
       options={{
         // iosta back yazısı çıktığı için eklendi.
         headerBackTitle: " ",
+        headerLeft: () => <HeaderBackButton />,
       }}
     />
     <Stack.Screen name={routes.SENTENCEWRITE} component={SentenceWriteScreen} />
