@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addMinutes, parseISO, formatDistanceToNowStrict } from "date-fns";
 
-import { apiCallBegan } from "./apiActions";
+import { apiCallBegan } from "./configuration/apiActions";
 
 const LIFE_INCREASE_MINUTE = 2;
 
@@ -45,11 +45,8 @@ const slice = createSlice({
   },
 });
 
-const {
-  generalInfoRequested,
-  generalInfoReceived,
-  generalInfoRequestFailed,
-} = slice.actions;
+const { generalInfoRequested, generalInfoReceived, generalInfoRequestFailed } =
+  slice.actions;
 export default slice.reducer;
 
 const url = "/general-info";

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { apiCallBegan } from "./apiActions";
+import { apiCallBegan } from "./configuration/apiActions";
 
 const slice = createSlice({
   name: "subjects",
@@ -26,11 +26,8 @@ const slice = createSlice({
   },
 });
 
-const {
-  subjectsRequested,
-  subjectsReceived,
-  subjectsRequestFailed,
-} = slice.actions;
+const { subjectsRequested, subjectsReceived, subjectsRequestFailed } =
+  slice.actions;
 export default slice.reducer;
 
 const url = "/subjects";

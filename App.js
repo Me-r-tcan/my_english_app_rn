@@ -5,7 +5,7 @@ import AppLoading from "expo-app-loading";
 import { useDispatch, useSelector, Provider } from "react-redux";
 import FlashMessage from "react-native-flash-message";
 
-import configureStore from "./src/store/configureStore";
+import configureStore from "./src/store/configuration/configureStore";
 import AuthNavigator from "./src/navigation/AuthNavigator";
 import AppNavigator from "./src/navigation/AppNavigator";
 // import AuthContext from "./src/auth/context";

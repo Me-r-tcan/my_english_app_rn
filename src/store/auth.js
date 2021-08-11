@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import jwtDecode from "jwt-decode";
 
 import authStorage from "../auth/storage";
-import { apiCallBegan } from "./apiActions";
+import { apiCallBegan } from "./configuration/apiActions";
 
 const slice = createSlice({
   name: "auth",

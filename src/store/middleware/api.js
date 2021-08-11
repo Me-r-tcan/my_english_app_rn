@@ -2,7 +2,7 @@ import axios from "axios";
 import { showMessage } from "react-native-flash-message";
 import Constants from "expo-constants";
 
-import * as actions from "../apiActions.js";
+import * as actions from "../configuration/apiActions.js";
 
 const api =
   ({ getState, dispatch }) =>

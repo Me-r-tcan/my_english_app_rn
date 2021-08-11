@@ -2,7 +2,7 @@ import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { createSlice } from "@reduxjs/toolkit";
 
-import { apiCallBegan } from "./apiActions";
+import { apiCallBegan } from "./configuration/apiActions";
 
 const slice = createSlice({
   name: "words",

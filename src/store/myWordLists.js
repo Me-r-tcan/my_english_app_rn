@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { apiCallBegan } from "./apiActions";
+import { apiCallBegan } from "./configuration/apiActions";
 
 const slice = createSlice({
   name: "myWordLists",
@@ -26,11 +26,8 @@ const slice = createSlice({
   },
 });
 
-const {
-  myWordListsRequested,
-  myWordListsReceived,
-  myWordListsRequestFailed,
-} = slice.actions;
+const { myWordListsRequested, myWordListsReceived, myWordListsRequestFailed } =
+  slice.actions;
 export default slice.reducer;
 
 const url = "/my-word-lists";
