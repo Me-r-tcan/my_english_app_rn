@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { AppState } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import Constants from "expo-constants";
 import AppLoading from "expo-app-loading";
 import { useDispatch, useSelector, Provider } from "react-redux";
 import FlashMessage from "react-native-flash-message";
@@ -21,7 +22,13 @@ export default function AppWrapper() {
   return (
     <Provider store={store}>
       <App />
-      <FlashMessage position='top' duration={2500} />
+      <FlashMessage
+        position='top'
+        duration={2250}
+        style={{
+          paddingTop: Platform.OS === "ios" ? 20 : Constants.statusBarHeight,
+        }}
+      />
     </Provider>
   );
 }
