@@ -1,6 +1,11 @@
 export default {
-  primary: "#42b3f5",
-  secondary: "#4ecdc4",
+  primary: "#57A8EF",
+  primary200: "#8FC5F4",
+  primary300: "#B5D9F8",
+  primary400: "#DAECFB",
+  secondary: "#00AAAF",
+  secondary200: "#32BABC",
+  secondary300: "#4ecdc4",
   black: "#000",
   white: "#fff",
   medium: "#6e6969",
