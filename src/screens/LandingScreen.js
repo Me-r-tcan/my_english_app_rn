@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useCallback } from "react";
 import { StyleSheet, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { useFocusEffect } from "@react-navigation/native";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
 import Screen from "../components/Screen";
@@ -16,10 +17,12 @@ const LandingScreen = () => {
     (state) => state.entities.levels
   );
 
-  useEffect(() => {
-    dispatch(loadLevels());
-    dispatch(loadGeneralInfo());
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      dispatch(loadLevels());
+      dispatch(loadGeneralInfo());
+    }, [])
+  );
 
   return (
     <Screen>

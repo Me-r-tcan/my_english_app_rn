@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useCallback } from "react";
 import { StyleSheet, View, FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { useFocusEffect } from "@react-navigation/native";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
 import SubjectOptionCircle from "../components/circles/SubjectOptionCircle";
@@ -16,9 +17,11 @@ const SubjectDetailScreen = ({ navigation, route }) => {
 
   const { subjectId } = route.params;
 
-  useEffect(() => {
-    dispatch(loadSubjectOptions(subjectId));
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      dispatch(loadSubjectOptions(subjectId));
+    }, [])
+  );
 
   return (
     <>

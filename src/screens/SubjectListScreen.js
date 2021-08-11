@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useCallback } from "react";
 import { StyleSheet, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { useFocusEffect } from "@react-navigation/native";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
 import ScrollList from "../components/lists/ScrollList";
@@ -11,9 +12,11 @@ const SubjectListScreen = ({ route }) => {
 
   const { subjects, loading } = useSelector((state) => state.entities.subjects);
 
-  useEffect(() => {
-    dispatch(loadSubjects(route.params.level));
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      dispatch(loadSubjects(route.params.level));
+    }, [])
+  );
 
   return (
     <>
