@@ -1,24 +1,15 @@
 import React, { useState, useLayoutEffect } from "react";
-import {
-  StyleSheet,
-  View,
-  useWindowDimensions,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { StyleSheet, View, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { showMessage } from "react-native-flash-message";
 
-import { AppForm, AppFormField, SubmitButton } from "../formElements";
+import WordWriteForm from "../forms/WordWriteForm";
 import ProgressBar from "./ProgressBar";
 import WrongAnswerModal from "../modals/WrongAnswerModal";
-import validationSchema from "../../validationSchemas/word";
 
 import { updateGeneralInfo } from "../../store/generalInfo";
 import { wordCopyAndPush } from "../../store/words";
-
-const numberOfLines = 4;
 
 const WritingArea = ({ item, scrollTo, percentage, addWordOnPress }) => {
   const dispatch = useDispatch();
@@ -30,8 +21,6 @@ const WritingArea = ({ item, scrollTo, percentage, addWordOnPress }) => {
     setIsModalWrongVisible(false);
     scrollTo();
   };
-
-  const windowWidth = useWindowDimensions().width;
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -68,38 +57,10 @@ const WritingArea = ({ item, scrollTo, percentage, addWordOnPress }) => {
 
   return (
     <>
-      <KeyboardAvoidingView
-        style={{ width: windowWidth }}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0}
-      >
-        <AppForm
-          initialValues={{
-            word: "",
-          }}
-          onSubmit={handleSubmit}
-          validationSchema={validationSchema}
-        >
-          <AppFormField
-            autoCapitalize='none'
-            autoCorrect={false}
-            placeholder='Kelimeyi Yazınız.'
-            keyboardType='default'
-            name='word'
-            textContentType='name'
-            multiline
-            numberOfLines={Platform.OS === "ios" ? null : numberOfLines}
-            minHeight={
-              Platform.OS === "ios" && numberOfLines ? 20 * numberOfLines : null
-            }
-          />
-
-          <SubmitButton title='KONTROL ET' color='success' />
-        </AppForm>
-      </KeyboardAvoidingView>
+      <WordWriteForm handleSubmit={handleSubmit} />
 
       {/* Yazılan cevabın görünmesi için alan ittirildi. */}
-      {isModalWrongVisible && <View style={{ marginBottom: "50%" }} />}
+      {isModalWrongVisible && <View style={{ marginBottom: "30%" }} />}
 
       <WrongAnswerModal
         isVisible={isModalWrongVisible}
