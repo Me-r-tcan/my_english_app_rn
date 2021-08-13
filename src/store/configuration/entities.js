@@ -9,6 +9,7 @@ import wordsReducer from "../words";
 import myWordListsReducer from "../myWordLists";
 import finishedSubjectOptionsReducer from "../finishedSubjectOptions";
 import generalInfoReducer from "../generalInfo";
+import confirmationsReducer from "../confirmations";
 
 export default combineReducers({
   auth: authReducer,
@@ -20,4 +21,5 @@ export default combineReducers({
   myWordLists: myWordListsReducer,
   finishedSubjectOptions: finishedSubjectOptionsReducer,
   generalInfo: generalInfoReducer,
+  confirmations: confirmationsReducer,
 });
