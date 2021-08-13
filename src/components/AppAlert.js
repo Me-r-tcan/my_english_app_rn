@@ -67,8 +67,6 @@ const AppAlert = ({
                 title={positiveButtonText}
                 color={positiveButtonColor}
                 onPress={onPressPositiveButton}
-                width='40%'
-                height='120%'
               />
             )}
 
@@ -77,8 +75,6 @@ const AppAlert = ({
                 title={negativeButtonText}
                 color={negativeButtonColor}
                 onPress={onPressNegativeButton}
-                width='40%'
-                height='120%'
               />
             )}
           </View>
@@ -113,33 +109,22 @@ const styles = StyleSheet.create({
     width: "80%",
     borderRadius: 10,
     padding: 12,
+    justifyContent: "space-between",
   },
   topPart: {
-    flex: 0.5,
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 2,
-    paddingVertical: 4,
   },
   middlePart: {
-    flex: 1,
-    width: "100%",
-    padding: 4,
     fontSize: defaultStyles.fontSize.medium,
-    marginVertical: 2,
   },
   bottomPart: {
-    flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: "10%",
   },
   alertTitleTextStyle: {
     ...defaultStyles.h1,
     paddingLeft: 10,
-  },
-  alertMessageButtonStyle: {
-    marginBottom: "10%",
   },
 });
 

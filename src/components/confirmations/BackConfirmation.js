@@ -36,7 +36,7 @@ const BackConfirmation = () => {
       textColors='black'
       backgroundColor='gray'
       outerBackgroundColor='transparentGray'
-      height='22%'
+      height='25%'
     />
   );
 };
