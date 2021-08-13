@@ -4,11 +4,11 @@ import { Foundation } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
+import SubjectNavigator from "./SubjectNavigator";
 import CollectionListScreen from "../screens/CollectionListScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import RankingScreen from "../screens/RankingScreen";
-import LandingScreen from "../screens/LandingScreen";
 import LifeButton from "./lifeButton";
 import routes from "./routes";
 
@@ -18,8 +18,8 @@ const MainTabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name={routes.LANDING}
-        component={LandingScreen}
+        name={routes.SUBJECT_NAVIGATOR}
+        component={SubjectNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name='home' color={color} size={size} />

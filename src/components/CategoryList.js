@@ -62,7 +62,7 @@ const CategoryList = ({ title, progressData }) => {
                 icon={item.icon}
                 iconLib={item.iconLib}
                 onPress={() =>
-                  navigation.navigate(routes.LEARNINGNAVIGATOR, {
+                  navigation.navigate(routes.SUBJECT_NAVIGATOR, {
                     screen: routes.SUBJECT_LIST,
                     params: { level: item.level },
                   })

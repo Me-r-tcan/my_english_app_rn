@@ -9,10 +9,10 @@ export default Object.freeze({
   RANKING: "Ranking",
   COLLECTION_LIST: "Collection",
   PROFILE: "Profile",
-
-  LEARNINGNAVIGATOR: "LearningNavigator",
+  SUBJECT_NAVIGATOR: "SubjectNavigator",
   SUBJECT_LIST: "SubjectList",
   SUBJECT_DETAIL: "SubjectDetail",
+
   LECTURE: "Lecture",
   WORD: "Word",
   WORDSELECT: "WordSelect",
