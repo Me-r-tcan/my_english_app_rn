@@ -4,7 +4,7 @@ export default Object.freeze({
   REGISTER: "Register",
   FORGOT_PASSWORD: "ForgotPassword",
 
-  MAINTABNAVIGATOR: "MainTabNavigator",
+  MAIN_TAB_NAVIGATOR: "MainTabNavigator",
   LANDING: "Landing",
   RANKING: "Ranking",
   COLLECTION_LIST: "Collection",
@@ -15,7 +15,7 @@ export default Object.freeze({
 
   LECTURE: "Lecture",
   WORD: "Word",
-  WORDSELECT: "WordSelect",
-  WORDWRITE: "WordWrite",
-  SENTENCEWRITE: "SentenceWrite",
+  WORD_SELECT: "WordSelect",
+  WORD_WRITE: "WordWrite",
+  SENTENCE_WRITE: "SentenceWrite",
 });

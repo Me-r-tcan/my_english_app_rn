@@ -18,7 +18,7 @@ const AppNavigator = () => (
 
   <Stack.Navigator>
     <Stack.Screen
-      name={routes.MAINTABNAVIGATOR}
+      name={routes.MAIN_TAB_NAVIGATOR}
       component={MainTabNavigator}
       options={{
         headerShown: false,
@@ -27,9 +27,9 @@ const AppNavigator = () => (
 
     <Stack.Screen name={routes.LECTURE} component={LectureScreen} />
     <Stack.Screen name={routes.WORD} component={WordScreen} />
-    <Stack.Screen name={routes.WORDSELECT} component={WordSelectScreen} />
+    <Stack.Screen name={routes.WORD_SELECT} component={WordSelectScreen} />
     <Stack.Screen
-      name={routes.WORDWRITE}
+      name={routes.WORD_WRITE}
       component={WordWriteScreen}
       options={{
         // iosta back yazısı çıktığı için eklendi.
@@ -37,7 +37,10 @@ const AppNavigator = () => (
         headerLeft: () => <HeaderBackButton />,
       }}
     />
-    <Stack.Screen name={routes.SENTENCEWRITE} component={SentenceWriteScreen} />
+    <Stack.Screen
+      name={routes.SENTENCE_WRITE}
+      component={SentenceWriteScreen}
+    />
   </Stack.Navigator>
 );
 
