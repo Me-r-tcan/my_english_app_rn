@@ -3,8 +3,12 @@ import { StyleSheet, KeyboardAvoidingView, ScrollView } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
-import AppFormSwitchField from "../components/forms/AppFormSwitchField";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import AppFormSwitchField from "../components/formElements/AppFormSwitchField";
+import {
+  AppForm,
+  AppFormField,
+  SubmitButton,
+} from "../components/formElements";
 import { login } from "../store/auth";
 import { register } from "../store/users";
 import validationSchema from "../validationSchemas/register";

@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { showMessage } from "react-native-flash-message";
 
-import { AppForm, AppFormField, SubmitButton } from "../forms";
+import { AppForm, AppFormField, SubmitButton } from "../formElements";
 import ProgressBar from "./ProgressBar";
 import WrongAnswerModal from "../modals/WrongAnswerModal";
 import validationSchema from "../../validationSchemas/word";

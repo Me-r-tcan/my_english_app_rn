@@ -1,7 +1,11 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import {
+  AppForm,
+  AppFormField,
+  SubmitButton,
+} from "../components/formElements";
 import Screen from "../components/Screen";
 import validationSchema from "../validationSchemas/forgotPassword";
 
