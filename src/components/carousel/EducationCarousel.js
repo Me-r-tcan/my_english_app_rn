@@ -63,7 +63,7 @@ const EducationCarousel = ({
           scrollEnabled={scrollEnabled}
           pagingEnabled
           bounces={false}
-          keyExtractor={(item) => item._id}
+          keyExtractor={(item) => item.key}
           onViewableItemsChanged={viewableItemsChanged}
           viewabilityConfig={viewConfig}
           ref={slidesRef}

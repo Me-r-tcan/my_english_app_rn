@@ -27,7 +27,7 @@ const slice = createSlice({
       );
 
       const copyWord = Object.assign({}, words.words[index]);
-      copyWord._id = uuidv4();
+      copyWord.key = uuidv4();
 
       words.words.push(copyWord);
 
@@ -50,7 +50,7 @@ const url = "/words";
 export const loadWords = (id, progress) =>
   apiCallBegan({
     url: `${url}/by-subject/${id}`,
-    params: { progress: progress },
+    params: { progress },
     onStart: wordsRequested.type,
     onSuccess: wordsReceived.type,
     onError: wordsRequestFailed.type,
