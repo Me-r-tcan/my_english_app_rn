@@ -8,6 +8,8 @@ import WordSelectScreen from "../screens/WordSelectScreen";
 import WordWriteScreen from "../screens/WordWriteScreen";
 import SentenceWriteScreen from "../screens/SentenceWriteScreen";
 import HeaderBackButton from "../components/headers/HeaderBackButton";
+import HeaderShowLife from "../components/headers/HeaderShowLife";
+
 import routes from "./routes";
 // import useNotifications from "../hooks/useNotifications";
 
@@ -35,6 +37,7 @@ const AppNavigator = () => (
         // iosta back yazısı çıktığı için eklendi.
         headerBackTitle: " ",
         headerLeft: () => <HeaderBackButton />,
+        headerRight: () => <HeaderShowLife />,
       }}
     />
     <Stack.Screen
