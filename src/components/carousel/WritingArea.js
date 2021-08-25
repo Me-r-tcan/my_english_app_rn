@@ -33,9 +33,21 @@ const WritingArea = ({ item, scrollTo, percentage, addWordOnPress }) => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
+    console.log("1111");
+
     item.englishWords.map((word) => {
       // Cevap verilen kelimeyi küçült ve boşlukları kaldır.
       const answerWord = values.word.toLowerCase().trim();
+
+      if (!answerWord) {
+        showMessage({
+          message: "Kelime yazınız.",
+          icon: { icon: "auto", position: "left" },
+          type: "danger",
+        });
+
+        return;
+      }
 
       // hatalı cevap ise
       if (word !== answerWord) {
