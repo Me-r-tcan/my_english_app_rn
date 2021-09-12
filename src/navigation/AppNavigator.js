@@ -27,9 +27,36 @@ const AppNavigator = () => (
       }}
     />
 
-    <Stack.Screen name={routes.LECTURE} component={LectureScreen} />
-    <Stack.Screen name={routes.WORD} component={WordScreen} />
-    <Stack.Screen name={routes.WORD_SELECT} component={WordSelectScreen} />
+    <Stack.Screen
+      name={routes.LECTURE}
+      component={LectureScreen}
+      options={{
+        // iosta back yazısı çıktığı için eklendi.
+        headerBackTitle: " ",
+        headerLeft: () => <HeaderBackButton />,
+        headerRight: () => <HeaderShowLife />,
+      }}
+    />
+    <Stack.Screen
+      name={routes.WORD}
+      component={WordScreen}
+      options={{
+        // iosta back yazısı çıktığı için eklendi.
+        headerBackTitle: " ",
+        headerLeft: () => <HeaderBackButton />,
+        headerRight: () => <HeaderShowLife />,
+      }}
+    />
+    <Stack.Screen
+      name={routes.WORD_SELECT}
+      component={WordSelectScreen}
+      options={{
+        // iosta back yazısı çıktığı için eklendi.
+        headerBackTitle: " ",
+        headerLeft: () => <HeaderBackButton />,
+        headerRight: () => <HeaderShowLife />,
+      }}
+    />
     <Stack.Screen
       name={routes.WORD_WRITE}
       component={WordWriteScreen}
@@ -43,6 +70,12 @@ const AppNavigator = () => (
     <Stack.Screen
       name={routes.SENTENCE_WRITE}
       component={SentenceWriteScreen}
+      options={{
+        // iosta back yazısı çıktığı için eklendi.
+        headerBackTitle: " ",
+        headerLeft: () => <HeaderBackButton />,
+        headerRight: () => <HeaderShowLife />,
+      }}
     />
   </Stack.Navigator>
 );
