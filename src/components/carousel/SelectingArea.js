@@ -55,14 +55,17 @@ const SelectingArea = ({ item, scrollTo, percentage, addWordOnPress }) => {
       <WordSelectForm handleSubmit={handleSubmit} trueItem={item} />
 
       {/* Yazılan cevabın görünmesi için alan ittirildi. */}
-      {isModalWrongVisible && <View style={{ marginBottom: "30%" }} />}
-
-      <WrongAnswerModal
-        isVisible={isModalWrongVisible}
-        onPressNegativeButton={addWordOnPress}
-        onPressPositiveButton={closeModalWrongAndContinue}
-        alertMessageText={item.turkishWords.join(",")}
-      />
+      {isModalWrongVisible && (
+        <>
+          <View style={{ marginBottom: "30%" }} />
+          <WrongAnswerModal
+            isVisible={isModalWrongVisible}
+            onPressNegativeButton={addWordOnPress}
+            onPressPositiveButton={closeModalWrongAndContinue}
+            alertMessageText={item.turkishWords.join(",")}
+          />
+        </>
+      )}
     </>
   );
 };
