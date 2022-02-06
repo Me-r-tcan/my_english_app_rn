@@ -18,33 +18,41 @@ const LoginScreen = ({ navigation }) => {
     dispatch(login(email, password));
   };
 
+  const handleFacebookAuth = () => {
+    // TODO: facebook auth eklenecek
+  };
+
+  const handleGmailAuth = () => {
+    // TODO: gmail auth eklenecek
+  };
+
+  const navigateRegister = () => {
+    navigation.navigate(routes.REGISTER);
+  };
+
   return (
     <View style={styles.container}>
       <AppActivityIndicator visible={loading} />
 
-      <View style={styles.content}>
+      <View style={styles.form}>
         <LoginForm handleSubmit={handleSubmit} />
+      </View>
 
-        <View style={styles.socialMediaLoginArea}>
-          <AppButton
-            title='FACEBOOK İLE GİRİŞ YAP'
-            color='secondary'
-            onPress={() => navigation.navigate(routes.REGISTER)}
-          />
-          <AppButton
-            title='GMAIL İLE GİRİŞ YAP'
-            color='danger'
-            onPress={() => navigation.navigate(routes.REGISTER)}
-          />
-        </View>
+      <View style={styles.socialMediaLoginArea}>
+        <AppButton
+          title='FACEBOOK İLE GİRİŞ YAP'
+          color='secondary'
+          onPress={handleFacebookAuth}
+        />
+        <AppButton
+          title='GMAIL İLE GİRİŞ YAP'
+          color='danger'
+          onPress={handleGmailAuth}
+        />
+      </View>
 
-        <View style={styles.registerBtnArea}>
-          <AppButton
-            title='ÜYE OL'
-            color='success'
-            onPress={() => navigation.navigate(routes.REGISTER)}
-          />
-        </View>
+      <View style={styles.registerBtnArea}>
+        <AppButton title='ÜYE OL' color='success' onPress={navigateRegister} />
       </View>
     </View>
   );
@@ -54,25 +62,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: defaultStyles.colors.primary400,
+    padding: 15,
   },
-  content: {
-    padding: 10,
-  },
-  containerHeader: {
-    alignSelf: "center",
-    marginVertical: 25,
-    fontSize: 24,
-  },
-  forgotPassword: {
-    fontSize: 14,
-    marginLeft: 15,
-    marginTop: 10,
+  form: {
+    flex: 0.45,
   },
   socialMediaLoginArea: {
-    marginTop: 40,
+    flex: 0.35,
   },
   registerBtnArea: {
-    marginTop: 40,
+    flex: 0.2,
   },
 });
 

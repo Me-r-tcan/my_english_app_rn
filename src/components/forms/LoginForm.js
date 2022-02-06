@@ -1,12 +1,19 @@
-import { StyleSheet } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import AppText from "../AppText";
 import { AppForm, AppFormField, SubmitButton } from "../formElements";
 import validationSchema from "../../validationSchemas/login";
 import routes from "../../navigation/routes";
+import defaultStyles from "../../config/styles";
 
 const LoginForm = ({ handleSubmit }) => {
+  const navigation = useNavigation();
+
+  const navigateForgotPassword = () => {
+    navigation.navigate(routes.FORGOT_PASSWORD);
+  };
+
   return (
     <AppForm
       initialValues={{ email: "", password: "" }}
@@ -35,15 +42,13 @@ const LoginForm = ({ handleSubmit }) => {
 
       <SubmitButton title='GİRİŞ' />
       <AppText
-        style={styles.forgotPassword}
-        onPress={() => navigation.navigate(routes.FORGOT_PASSWORD)}
+        onPress={navigateForgotPassword}
+        style={{ color: defaultStyles.colors.medium }}
       >
         Şifremi Unuttum
       </AppText>
     </AppForm>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default LoginForm;
