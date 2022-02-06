@@ -4,15 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
 import AppButton from "../components/AppButton";
-import AppText from "../components/AppText";
-import {
-  AppForm,
-  AppFormField,
-  SubmitButton,
-} from "../components/formElements";
-import validationSchema from "../validationSchemas/login";
 import routes from "../navigation/routes";
+import defaultStyles from "../config/styles";
 import { login } from "../store/auth";
+import LoginForm from "../components/forms/LoginForm";
 
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -24,47 +19,16 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <>
+    <View style={styles.container}>
       <AppActivityIndicator visible={loading} />
-      <View style={styles.container}>
-        <AppForm
-          initialValues={{ email: "", password: "" }}
-          onSubmit={handleSubmit}
-          validationSchema={validationSchema}
-        >
-          <AppFormField
-            autoCapitalize='none'
-            autoCorrect={false}
-            placeholder='Mail'
-            icon='email'
-            keyboardType='email-address'
-            name='email'
-            textContentType='emailAddress'
-          />
 
-          <AppFormField
-            autoCapitalize='none'
-            autoCorrect={false}
-            placeholder='Şifre'
-            icon='lock'
-            name='password'
-            secureTextEntry
-            textContentType='password'
-          />
-
-          <SubmitButton title='GİRİŞ' />
-          <AppText
-            style={styles.forgotPassword}
-            onPress={() => navigation.navigate(routes.FORGOT_PASSWORD)}
-          >
-            Şifremi Unuttum
-          </AppText>
-        </AppForm>
+      <View style={styles.content}>
+        <LoginForm handleSubmit={handleSubmit} />
 
         <View style={styles.socialMediaLoginArea}>
           <AppButton
             title='FACEBOOK İLE GİRİŞ YAP'
-            color='primary'
+            color='secondary'
             onPress={() => navigation.navigate(routes.REGISTER)}
           />
           <AppButton
@@ -82,12 +46,16 @@ const LoginScreen = ({ navigation }) => {
           />
         </View>
       </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: defaultStyles.colors.primary400,
+  },
+  content: {
     padding: 10,
   },
   containerHeader: {

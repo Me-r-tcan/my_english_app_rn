@@ -14,7 +14,7 @@ export default {
   dark: "#0c0c0c",
   danger: "#ff5252",
   warning: "#f5e642",
-  success: "#00BC5E",
+  success: "#118888",
   olive: "#3BB786",
   circleGreen: "#689B87",
   gray: "#d9d9d9",
