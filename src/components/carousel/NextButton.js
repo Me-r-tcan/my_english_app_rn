@@ -73,7 +73,11 @@ const NextButton = ({ percentage, scrollTo }) => {
         style={styles.button}
         activeOpacity={0.6}
       >
-        <AntDesign name='arrowright' size={32} color='#fff' />
+        <AntDesign
+          name='arrowright'
+          size={32}
+          color={defaultStyles.colors.white}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -86,7 +90,7 @@ const styles = StyleSheet.create({
   },
   button: {
     position: "absolute",
-    backgroundColor: defaultStyles.colors.secondary300,
+    backgroundColor: defaultStyles.colors.secondary200,
     borderRadius: 60,
     padding: 18,
   },

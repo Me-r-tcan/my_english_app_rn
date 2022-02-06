@@ -6,6 +6,7 @@ import InitialScreen from "../screens/InitialScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import routes from "./routes";
+import defaultStyles from "../config/styles";
 
 const Stack = createStackNavigator();
 const AuthNavigator = () => (
@@ -18,17 +19,32 @@ const AuthNavigator = () => (
     <Stack.Screen
       name={routes.LOGIN}
       component={LoginScreen}
-      options={{ title: "Giriş" }}
+      options={{
+        title: "Giriş",
+        headerStyle: {
+          backgroundColor: defaultStyles.colors.primary400,
+        },
+      }}
     />
     <Stack.Screen
       name={routes.REGISTER}
       component={RegisterScreen}
-      options={{ title: "Yeni Üye" }}
+      options={{
+        title: "Yeni Üye",
+        headerStyle: {
+          backgroundColor: defaultStyles.colors.primary400,
+        },
+      }}
     />
     <Stack.Screen
       name={routes.FORGOT_PASSWORD}
       component={ForgotPasswordScreen}
-      options={{ title: "Şifremi Unuttum" }}
+      options={{
+        title: "Şifremi Unuttum",
+        headerStyle: {
+          backgroundColor: defaultStyles.colors.primary400,
+        },
+      }}
     />
   </Stack.Navigator>
 );

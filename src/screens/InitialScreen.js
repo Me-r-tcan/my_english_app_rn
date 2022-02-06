@@ -9,6 +9,14 @@ import slides from "../components/carousel/slides";
 import defaultStyles from "../config/styles";
 
 const InitialScreen = ({ navigation }) => {
+  const navigateLogin = () => {
+    navigation.navigate(routes.LOGIN);
+  };
+
+  const navigateRegister = () => {
+    navigation.navigate(routes.REGISTER);
+  };
+
   return (
     <Screen style={styles.container}>
       <View style={styles.carouselContent}>
@@ -16,15 +24,11 @@ const InitialScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.buttonContent}>
-        <AppButton
-          title='ÜYE GİRİŞİ'
-          onPress={() => navigation.navigate(routes.LOGIN)}
-          color='primary'
-        />
+        <AppButton title='ÜYE GİRİŞİ' onPress={navigateLogin} color='primary' />
         <AppButton
           title='YENİ ÜYELİK'
-          onPress={() => navigation.navigate(routes.REGISTER)}
-          color='primary'
+          onPress={navigateRegister}
+          color='secondary'
         />
       </View>
     </Screen>
