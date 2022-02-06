@@ -3,15 +3,10 @@ import { StyleSheet, KeyboardAvoidingView, ScrollView } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
-import AppFormSwitchField from "../components/formElements/AppFormSwitchField";
-import {
-  AppForm,
-  AppFormField,
-  SubmitButton,
-} from "../components/formElements";
+import RegisterForm from "../components/forms/RegisterForm";
+import defaultStyles from "../config/styles";
 import { login } from "../store/auth";
 import { register } from "../store/users";
-import validationSchema from "../validationSchemas/register";
 
 const RegisterScreen = () => {
   const dispatch = useDispatch();
@@ -36,73 +31,15 @@ const RegisterScreen = () => {
     <ScrollView style={styles.container}>
       <AppActivityIndicator visible={loading || auth.loading} />
 
-      <AppForm
-        initialValues={{
-          email: "",
-          password: "",
-          passwordConfirmation: "",
-          username: "",
-          notification: false,
-        }}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      >
-        <AppFormField
-          autoCapitalize='words'
-          autoCorrect={false}
-          placeholder='Username *'
-          icon='person'
-          iconLib='Ionicons'
-          keyboardType='email-address'
-          name='username'
-          textContentType='name'
-        />
-        <AppFormField
-          autoCapitalize='none'
-          autoCorrect={false}
-          placeholder='Mail *'
-          icon='email'
-          keyboardType='email-address'
-          name='email'
-          textContentType='emailAddress'
-        />
-        <AppFormField
-          autoCapitalize='none'
-          autoCorrect={false}
-          placeholder='Şifre *'
-          icon='lock'
-          name='password'
-          secureTextEntry
-          textContentType='password'
-        />
-        <AppFormField
-          autoCapitalize='none'
-          autoCorrect={false}
-          placeholder='Şifre Tekrar *'
-          icon='lock'
-          name='passwordConfirmation'
-          secureTextEntry
-          textContentType='password'
-        />
-
-        <AppFormSwitchField
-          name='notification'
-          trackColor={{ false: "danger", true: "success" }}
-          thumbColor={{ false: "white", true: "primary" }}
-          ios_backgroundColor='white'
-          marginCustomVertical={10}
-        >
-          Bildirimleri veya istatistikleri e-mail yoluyla almak istiyorum.
-        </AppFormSwitchField>
-        <SubmitButton title='ÜYE OL' color='success' />
-      </AppForm>
+      <RegisterForm handleSubmit={handleSubmit} />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 15,
+    backgroundColor: defaultStyles.colors.primary400,
   },
 });
 
