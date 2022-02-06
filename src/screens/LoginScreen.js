@@ -3,9 +3,9 @@ import { StyleSheet, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
+import Container from "../components/Container";
 import AppButton from "../components/AppButton";
 import routes from "../navigation/routes";
-import defaultStyles from "../config/styles";
 import { login } from "../store/auth";
 import LoginForm from "../components/forms/LoginForm";
 
@@ -31,7 +31,7 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <Container style={styles.container}>
       <AppActivityIndicator visible={loading} />
 
       <View style={styles.form}>
@@ -54,14 +54,12 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.registerBtnArea}>
         <AppButton title='ÜYE OL' color='success' onPress={navigateRegister} />
       </View>
-    </View>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: defaultStyles.colors.primary400,
     padding: 15,
   },
   form: {

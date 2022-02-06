@@ -6,7 +6,6 @@ import Screen from "../components/Screen";
 import routes from "../navigation/routes";
 import InitialScreenCarousel from "../components/carousel/InitialScreenCarousel";
 import slides from "../components/carousel/slides";
-import defaultStyles from "../config/styles";
 
 const InitialScreen = ({ navigation }) => {
   const navigateLogin = () => {
@@ -38,7 +37,6 @@ const InitialScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: defaultStyles.colors.primary400,
   },
   carouselContent: {
     flex: 0.7,

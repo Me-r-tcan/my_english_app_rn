@@ -3,8 +3,8 @@ import { StyleSheet, KeyboardAvoidingView, ScrollView } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 import AppActivityIndicator from "../components/AppActivityIndicator";
+import Container from "../components/Container";
 import RegisterForm from "../components/forms/RegisterForm";
-import defaultStyles from "../config/styles";
 import { login } from "../store/auth";
 import { register } from "../store/users";
 
@@ -28,18 +28,19 @@ const RegisterScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <AppActivityIndicator visible={loading || auth.loading} />
+    <Container>
+      <ScrollView style={styles.container}>
+        <AppActivityIndicator visible={loading || auth.loading} />
 
-      <RegisterForm handleSubmit={handleSubmit} />
-    </ScrollView>
+        <RegisterForm handleSubmit={handleSubmit} />
+      </ScrollView>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    backgroundColor: defaultStyles.colors.primary400,
   },
 });
 
