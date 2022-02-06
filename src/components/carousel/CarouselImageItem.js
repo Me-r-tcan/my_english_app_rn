@@ -7,6 +7,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 
+import defaultStyles from "../../config/styles";
+
 const CarouselImageItem = ({ item }) => {
   const { width } = useWindowDimensions();
 
@@ -14,13 +16,11 @@ const CarouselImageItem = ({ item }) => {
     <View style={[styles.container, { width }]}>
       <Image
         source={item.image}
-        style={[styles.image, { width, resizeMode: "contain" }]}
+        style={[styles.image, { width, resizeMode: "cover" }]}
       />
 
-      <View style={{ flex: 0.3 }}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-      </View>
+      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.description}>{item.description}</Text>
     </View>
   );
 };
@@ -28,25 +28,18 @@ const CarouselImageItem = ({ item }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
   },
   image: {
-    flex: 0.7,
-    justifyContent: "center",
+    flex: 0.9,
   },
   title: {
-    fontWeight: "800",
     fontSize: 28,
-    marginBottom: 10,
-    color: "#493d8a",
-    textAlign: "center",
+    color: defaultStyles.colors.secondary300,
+    marginVertical: 3,
   },
   description: {
-    fontWeight: "300",
-    color: "#62656b",
-    textAlign: "center",
-    paddingHorizontal: 64,
+    color: defaultStyles.colors.secondary400,
   },
 });
 

@@ -5,12 +5,11 @@ import CarouselImageItem from "./CarouselImageItem";
 import Paginator from "./Paginator";
 import NextButton from "./NextButton";
 
-const Carousel = ({ slides }) => {
+const InitialScreenCarousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
 
-  // TODO: Hata veren kısım
   const viewableItemsChanged = useRef(({ viewableItems }) => {
     setCurrentIndex(viewableItems[0].index);
   }).current;
@@ -20,14 +19,12 @@ const Carousel = ({ slides }) => {
   const scrollTo = () => {
     if (currentIndex < slides.length - 1) {
       slidesRef.current.scrollToIndex({ index: currentIndex + 1 });
-    } else {
-      console.log("last item");
     }
   };
 
   return (
     <View style={styles.container}>
-      <View style={{ flex: 3 }}>
+      <View style={{ flex: 0.75 }}>
         <FlatList
           data={slides}
           renderItem={({ item }) => <CarouselImageItem item={item} />}
@@ -47,11 +44,17 @@ const Carousel = ({ slides }) => {
         />
       </View>
 
-      <Paginator data={slides} scrollX={scrollX} />
-      <NextButton
-        scrollTo={scrollTo}
-        percentage={(currentIndex + 1) * (100 / slides.length)}
-      />
+      <View style={{ flex: 0.1 }}>
+        <Paginator data={slides} scrollX={scrollX} />
+      </View>
+
+      <View style={{ flex: 0.1 }}>
+        <NextButton
+          scrollTo={scrollTo}
+          percentage={(currentIndex + 1) * (100 / slides.length)}
+          style={styles.nextButton}
+        />
+      </View>
     </View>
   );
 };
@@ -59,9 +62,8 @@ const Carousel = ({ slides }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
   },
 });
 
-export default Carousel;
+export default InitialScreenCarousel;
